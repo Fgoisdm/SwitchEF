@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Switch.Infra.Data.Context;
 
 namespace Switch.Infra.Data.Migrations
 {
     [DbContext(typeof(SwitchContext))]
-    partial class SwitchContextModelSnapshot : ModelSnapshot
+    [Migration("20181207115931_AddUserConfiguration")]
+    partial class AddUserConfiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,8 +40,7 @@ namespace Switch.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("Password")
-                        .IsRequired();
+                    b.Property<string>("Password");
 
                     b.Property<string>("UrlPhoto")
                         .IsRequired()
