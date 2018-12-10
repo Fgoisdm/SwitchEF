@@ -15,7 +15,6 @@ namespace Switch.Domain.Entities
         public DateTime BirthDate { get; set; }
         public string UrlPhoto { get; set; }
         public GenderEnum Gender { get; set; }
-
-
+       
     }
 }
